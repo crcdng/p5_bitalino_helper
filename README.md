@@ -2,12 +2,14 @@
 
 A helper class for using [Processing](https://processing.org) with [BITalino](http://bitalino.com/en/).
 
+Supports Processing 3.4+ and BITalino (r)evolution (BITalino 2).
+
 First connect your BITalino via Bluetooth / BLE.
 
-To use the BITalino class, start with one of the examples. Alternatively, you can open a new sketch in Processing and drag and drop `Bitalino.pde` from the `dist` folder on the sketch window. Then you can read data from the BITalino like this:
+To use the BITalino helper, start with one of the examples. Or open a new sketch in Processing and drag and drop `Bitalino.pde` from the `dist` folder on the sketch window. Then you can read data from the BITalino (r)evolution like this:
 
 ```
-Bitalino bitalino;
+Bitalino2 bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
 
@@ -22,8 +24,6 @@ void draw() {
 }
 ```
 
-Sometimes, you get an error message like this one: `Error opening serial port /dev/cu.BITalino-DevB: Port busy`. First wait a second and restart the sketch. If the message persists, check the port and the Bluetooth connection to your BITalino.
-
-Supports Processing 3.4+ and BITalino (r)evolution (BITalino 2).
+Sometimes, you get an error message like this one: `Error opening serial port /dev/cu.BITalino-DevB: Port busy`. First wait a second and restart the sketch. If the message persists, double check the port and the Bluetooth connection to your BITalino.
 
 See `VERSIONS.md` for more info about the roadmap and planned features.

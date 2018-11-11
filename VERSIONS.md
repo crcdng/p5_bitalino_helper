@@ -3,16 +3,18 @@
 ## 0.4.0 "Whatever, Whenever" (Open)
 
 ## 0.3.0 "Always Look Backwards" (Planned)
-[ ] API: Support for BITalino     
+[ ] API: Support for BITalino1  
+[ ] API: state, led, buzzer    
+[ ] Documentation: Javadoc    
 [ ] API: Parameter / Type checks          
 [ ] Example: Sonify Biosignals with Supercollider        
 [ ] Example: Send Biodata into VR with AFRAME        
 [ ] Example: Arduino        
 
 ## 0.2.0 "More BITs" (In Progress)
-[ ] API: version, state, LED, buzzer      
-[ ] Documentation: Javadoc    
-[ ] Example: MusclePong (adapted from code by Edwin Dertien)    
+[x] API: version    
+[x] API: changes: Bitalino2 class for BITalino1 (r)evolution             
+[x] Example: MusclePong (adapted from code by Edwin Dertien)    
 [ ] Example: GraphWriter (adapted from code by Edwin Dertien)     
 [ ] Example: Machine Learning with Wekinator    
 
