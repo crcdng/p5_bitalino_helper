@@ -39,7 +39,6 @@ class Bitalino2 extends Bitalino {
     }
     send((output << 2) | 0xB3); // set digital outputs 1 0 1 1 O1 O2 1 1
   }
-
 }
 
 abstract class Bitalino {
@@ -54,11 +53,19 @@ abstract class Bitalino {
   
   Bitalino(PApplet applet, int portnumber) {  
     this(applet, Serial.list()[portnumber]);
+    println("Bitalino: Available ports:");    
     printArray(Serial.list());
   }
   
-  Bitalino(PApplet applet, String portname) {  
-    port = new Serial(applet, portname, 115200);
+  Bitalino(PApplet applet, String portname) { 
+    try {
+      port = new Serial(applet, portname, 115200);
+    } catch (Exception e) {
+      println("Bitalino: Could not open a connection to the BITalino at port: " + portname);    
+      println("Exiting...");
+      exit();
+    } 
+    
     registerMethod("dispose", applet);  // CAREFUL registerMethod is undocumented
     mode = Mode.IDLE;
   }
@@ -89,8 +96,8 @@ abstract class Bitalino {
     port.stop();
   }
     
-  boolean isAcquire() { return mode == Mode.ACQUIRE; }
-  boolean isEmulate() { return mode == Mode.EMULATE; }
+  boolean isAcquiring() { return mode == Mode.ACQUIRE; }
+  boolean isEmulating() { return mode == Mode.EMULATE; }
   boolean isIdle() { return mode == Mode.IDLE; }
   
   int [] read() { 
@@ -117,8 +124,10 @@ abstract class Bitalino {
     return data;
   }
 
-  void send(int data) { 
-    port.write(data);
+  void send(int data) {
+    try {
+      port.write(data);
+    } catch (Exception e) {}
   } 
 
   void start() { 

@@ -3,7 +3,7 @@
 // BITalino (r)evolution
 // by @crcdng
 
-Bitalino2 bitalino;
+Bitalino bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
 

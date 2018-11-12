@@ -12,7 +12,7 @@
 // dispose() is automatically called when the sketch is closed with the Escape key,
 // not when the stop button is clicked or when Processing is terminated.
 
-Bitalino2 bitalino;
+Bitalino bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
 boolean isRecording = false;

@@ -6,19 +6,18 @@
 
 int PORTNUMBER = 0;
 
-Bitalino2 bitalino;
+Bitalino bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
 
 int lines = 6;
-float amplitude = 1.0;
-int previousValues[] = new int[lines];
+int previousValues [] = new int[lines];
 PFont font;
-int linecolor[] = { 0, 40, 80, 120, 160, 200, 240, 1 }; //HSB color mode
+int linecolor [] = { 0, 40, 80, 120, 160, 200, 240, 1 }; //HSB color mode
 int offsetX = 30;
 int offsetY = 0;
 float scaling = 0.25;
-int values[] = new int[lines];
+int values [] = new int[lines];
 int x = offsetX;
 
 void setup() {

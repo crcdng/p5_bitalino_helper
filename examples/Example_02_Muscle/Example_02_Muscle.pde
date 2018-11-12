@@ -5,7 +5,7 @@
 
 // make sure to have the electrodes connected to the EMG (Electromyography) channel
 
-Bitalino2 bitalino;
+Bitalino bitalino;
 final int EMG = 0;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
