@@ -24,6 +24,6 @@ void draw() {
 }
 ```
 
-Sometimes, you get an error message like this one: `Error opening serial port /dev/cu.BITalino-DevB: Port busy`. First wait a second and restart the sketch. If the message persists, double check the port and the Bluetooth connection to your BITalino.
+Sometimes, you get an error message like this one: `Bitalino: Could not open a connection to the BITalino at port: ...`. First wait a second and restart the sketch. If the message persists, double check the port and the Bluetooth connection to your BITalino.
 
 See `VERSIONS.md` for more info about the roadmap and planned features.

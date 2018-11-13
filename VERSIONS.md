@@ -3,6 +3,8 @@
 ## 0.5.0 "Whatever, Whenever" (Open)
 [ ] API: state, led, buzzer    
 [ ] API: Parameter / Type checks          
+[ ] Example: Unity?
+[ ] Example: Unreal?        
 
 ## 0.4.0 "Always Look Backwards" (Planned)
 [ ] API: Support for BITalino1  
@@ -12,7 +14,7 @@
 [ ] Example: Actuation with Arduino        
 
 ## 0.3.0 "Examples, Please" (In Progress)
-[ ] Example: Machine Learning with Wekinator    
+[x] Example: Machine Learning with Wekinator    
 [ ] Example: Sonify Biosignals with Supercollider        
 [ ] Example: Send Biodata into VR with AFRAME        
 
