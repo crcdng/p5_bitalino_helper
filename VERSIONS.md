@@ -22,7 +22,7 @@
 [x] Example: Trigger       
 [x] Example: Version       
 [x] Example: GraphWriter (adapted from code by Edwin Dertien)         
-[ ] Example: MusclePong (adapted from code by Edwin Dertien)    
+[x] Example: MusclePong (adapted from code by Edwin Dertien)    
 
 ## 0.1.0 "Hello BITalino" (Previous)
 [x] API: Basic functionality to acquire and record data   
