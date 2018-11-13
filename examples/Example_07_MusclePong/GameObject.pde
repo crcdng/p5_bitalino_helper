@@ -34,16 +34,15 @@ class GameObject {
     x = x + dx;
     y = y + dy;
     if (collideX == Boundary.CONSTRAIN) { 
-      constrain(x, 0, width-w); 
+      x = constrain(x, 0, width-w); 
     } else if (collideX == Boundary.REFLECT) {
       if (x < 0 || x + w > width) { dx = -dx; }
       update();
     } else if (collideX == Boundary.SCORE) {
       if (x < 0) { return 0; } else if (x + w > width) { return 1; } 
-    }
-    
+    }   
     if (collideY == Boundary.CONSTRAIN) { 
-      constrain(y, 0, height-h); 
+      y = constrain(y, 0, height-h); 
      } else if (collideY == Boundary.REFLECT) {
       if (y < 0 || y + h > height) { dy = -dy; }
       update();
