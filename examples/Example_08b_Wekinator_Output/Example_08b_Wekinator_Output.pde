@@ -2,7 +2,7 @@
 // Example_08b_Wekinator_Output
 // BITalino (r)evolution
 // by @crcdng
-// oscP5 library by AnrerAndreasas Schlegel
+// oscP5 library by Andreas Schlegel
 // Wekinator by Rebecca Fiebrink http://www.wekinator.org
 // run parallel with Example_08a_Wekinator_Input
 

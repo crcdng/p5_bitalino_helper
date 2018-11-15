@@ -1,7 +1,7 @@
 # P5 BITalino-helper Versions and Roadmap
 
 ## 0.5.0 "Whatever, Whenever" (Open)
-[ ] API: state, led, buzzer    
+[ ] API: state, led, buzzer, batch read   
 [ ] API: Parameter / Type checks          
 [ ] Example: Unity?
 [ ] Example: Unreal?        
@@ -15,7 +15,7 @@
 
 ## 0.3.0 "Examples, Please" (In Progress)
 [x] Example: Machine Learning with Wekinator    
-[ ] Example: Sonify Biosignals with Supercollider        
+[x] Example: Sonify Biosignals with Supercollider        
 [ ] Example: Send Biodata into VR with AFRAME        
 
 ## 0.2.0 "More BITs" (Current)
