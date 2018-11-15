@@ -10,7 +10,7 @@
 [ ] API: Support for BITalino1  
 [ ] Documentation: Javadoc    
 [ ] Documentation: Examples    
-[ ] Example: 2-Player MusclePong
+[ ] Example: 2-Player MusclePong    
 [ ] Example: Actuation with Arduino        
 
 ## 0.3.0 "Examples, Please" (In Progress)
