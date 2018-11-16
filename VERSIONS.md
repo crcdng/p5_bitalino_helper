@@ -5,18 +5,20 @@
 [ ] API: Parameter / Type checks          
 [ ] Example: Unity?
 [ ] Example: Unreal?        
+[ ] Example: 2-Player MusclePong    
 
 ## 0.4.0 "Always Look Backwards" (Planned)
 [ ] API: Support for BITalino1  
 [ ] Documentation: Javadoc    
 [ ] Documentation: Examples    
-[ ] Example: 2-Player MusclePong    
-[ ] Example: Actuation with Arduino        
+[ ] Example: Units
+[ ] Example: Filtering and Smoothing Data
 
 ## 0.3.0 "Examples, Please" (In Progress)
 [x] Example: Machine Learning with Wekinator    
 [x] Example: Sonify Biosignals with Supercollider        
-[ ] Example: Send Biodata into VR with AFRAME        
+[x] Example: Biodata and VR with AFRAME        
+[ ] Example: Actuation with Arduino        
 
 ## 0.2.0 "More BITs" (Current)
 [x] API: trigger, version    

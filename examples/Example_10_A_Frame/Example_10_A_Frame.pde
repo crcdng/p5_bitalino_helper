@@ -2,9 +2,9 @@
 // Example_10_A-Frame
 // BITalino (r)evolution
 // by @crcdng
-// oscP5 library by Andreas Schlegel
+// oscP5 library by Andreas Schlegel http://www.sojamo.de/libraries/oscP5/
 // A-Frame by A-Frame contributors https://aframe.io
-// osc-j by Andreas Dzialocha
+// osc-j by Andreas Dzialocha https://github.com/adzialocha/osc-js
 // reqires a webserver and node.js/npm https://nodejs.org/
 
 // A-Frame project is in the data/www folder
@@ -51,8 +51,8 @@ void setup() {
   oscP5 = new OscP5(this, MY_UDP_PORT);
   destination = new NetAddress("127.0.0.1", RECEIVER_UDP_PORT);
   bitalino = new Bitalino2(this, PORT);
-  // bitalino.start(100); // data acquisition with 100 samples / second
-  bitalino.start(100, new int [] { 0, 1, 2, 3, 4, 5 }, 0x2); // emulation
+  bitalino.start(100); // data acquisition with 100 samples / second
+  // bitalino.start(100, new int [] { 0, 1, 2, 3, 4, 5 }, 0x2); // emulation
 }
 
 void draw() {
@@ -60,8 +60,8 @@ void draw() {
   data = bitalino.receive(); // read a sample of raw data
   int eda = data[EDA];
   int eeg = data[EEG];
-  // send raw EDA, EEG values to A-FRAMErame
-  sendOsc(new float [] { eda, eeg }, destination); 
+  // send normalized EDA, EEG values to A-Frame
+  sendOsc(new float [] { norm(eda, 0, 1024), norm(eeg, 0, 1024) }, destination);  
   // visualize the values
   float yEda = map(eda, 0, 1024, 0, height);
   fill(12, 18, 244);
@@ -73,14 +73,13 @@ void draw() {
 
 void sendOsc(float [] values, NetAddress dest) { 
   OscMessage msg = new OscMessage("/aframe/inputs");
-  msg.add(values[0]); 
+  msg.add(values[0]);  
   msg.add(values[1]);
   oscP5.send(msg, dest);
 }
 
-void oscEvent(OscMessage theOscMessage) {
-  /* print the address pattern and the typetag of the received OscMessage */
-  print("### received an osc message.");
-  print(" addrpattern: "+theOscMessage.addrPattern());
-  println(" typetag: "+theOscMessage.typetag());
+void oscEvent(OscMessage msg) {
+  if (msg.checkAddrPattern("/aframe/connect")) {
+    println("received OSC conection message from A-Frame");
+  }
 }
