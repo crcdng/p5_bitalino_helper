@@ -7,12 +7,12 @@
 // Wekinator project resources are in the data folder
 // run parallel with Example_08b_Wekinator_Output
 
-// Wekinator_Input: EDA, EEG => 
-// Port 6448 /wek/inputs =>
-// Wekinator All continous (Regression)  
-// Record for set outputs, e.g. 0 when calm and 1 when agitated, train, then run => 
+// BITalino: EDA, EEG => 
+// Wekinator_Input Sketch => 
+// Port 6448 /wek/inputs Wekinator All continous (Regression) => 
+// Record for given outputs, e.g. 0 when calm and 1 when agitated, train, then run => 
 // Port 12000 /wek/outputs => 
-// [0..1] Wekinator_Output
+// Wekinator_Output Sketch [0..1] 
 
 import oscP5.*;
 import netP5.*;

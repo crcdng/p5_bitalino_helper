@@ -7,22 +7,7 @@
   </head>
   <body>
     <a-scene light="defaultLightsEnabled: false">
-
-      <a-entity osc=""></a-entity>
-
-      <!-- <a-entity light="type: ambient; color: #88F; intensity: 0.8"></a-entity> -->
-
-      <!-- <a-entity light="type: directional; color: #EEE; intensity: 0.79" position="-10 10 0"
-      ></a-entity> -->
-
-      <!-- <a-entity light="type: hemisphere; color: #33C; groundColor: #3C3; intensity: 2"></a-entity> -->
-
-      <!-- <a-entity light="type: point; intensity: 0.75; distance: 50; decay: 2"
-      ></a-entity> -->
-
       <a-entity light="type: spot; angle: 45"></a-entity>
-
-
       <a-box id="#send" position="-1 0.5 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
       <a-sphere position="0 1.25 -5" radius="1.25" color="#EF2D5E"></a-sphere>
       <a-cylinder position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
@@ -31,7 +16,11 @@
     </a-scene>
     <script type="text/javascript">
       const osc = new OSC();
-      osc.on('/param/density', message => {
+      const message = new OSC.Message('/connect');
+      osc.on('open', () => {
+        osc.send(message);
+      });
+      osc.on('/aframe/inputs', message => {
         console.log(message.args);
       });
       osc.open();
