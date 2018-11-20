@@ -26,4 +26,4 @@ void draw() {
 
 Sometimes, you get an error message like this one: `Bitalino: Could not open a connection to the BITalino at port: ...`. First wait a second and restart the sketch. If the message persists, double check the port and the Bluetooth connection to your BITalino.
 
-See `[VERSIONS](VERSIONS.md)` for more info about the roadmap and planned features.
+See [VERSIONS.md](VERSIONS.md) for more info about the roadmap and planned features.
