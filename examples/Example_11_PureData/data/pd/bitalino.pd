@@ -1,0 +1,112 @@
+#N canvas 599 49 658 769 10;
+#X obj 392 313 sendOSC;
+#X msg 459 229 send /pd 1000;
+#X msg 459 282 send /pd 220;
+#X msg 459 254 send /pd 677;
+#X obj 33 21 OSC;
+#X msg 391 176 connect localhost 9298;
+#X floatatom 392 354 5 0 0 0 - - -;
+#X msg 413 201 disconnect;
+#X text 387 136 send data to Processing;
+#X msg 72 21 version;
+#X floatatom 190 344 4 0 0 0 - - -;
+#X obj 190 292 unpack f;
+#X obj 190 248 OSCroute /pd;
+#X obj 190 270 OSCroute /inputs;
+#X obj 113 254 print log;
+#X text 83 135 receive data from BITalino/Processing;
+#X obj 190 709 dac~;
+#N canvas 0 22 450 278 (subpatch) 0;
+#X array signal 100 float 3;
+#A 0 0.244708 0.839521 0.710421 -0.94799 -0.135531 -0.852131 0.577487
+-0.25999 0.67339 0.56139 -0.389175 0.506859 0.424714 -0.120474 -0.155257
+-0.47293 -0.184139 -0.855184 0.720268 0.865483 -0.0728495 -0.703949
+0.116827 0.605101 -0.824084 -0.028397 0.668855 0.329945 -0.607724 -0.20717
+0.239069 -0.0290424 -0.107136 -0.949413 -0.80477 0.732288 0.676466
+0.95427 -0.472622 0.811614 -0.624839 -0.0984474 -0.363859 -0.712108
+-0.739105 -0.935015 0.174388 0.49664 -0.532544 -0.374513 -0.204302
+-0.351474 0.112065 0.0928656 0.0390481 -0.294067 -0.756443 -0.0427904
+0.113065 -0.114607 0.858219 -0.0239007 0.819963 0.0312855 -0.667258
+-0.908811 0.298423 -0.30145 -0.0421705 -0.471117 0.83969 -0.357205
+0.478584 0.82693 -0.187144 -0.0605296 -0.8884 0.116939 -0.626372 0.510176
+0.164756 0.603152 0.278366 0.203314 -0.104156 -0.68111 -0.936049 0.213958
+0.805835 0.428441 0.177344 0.272808 0.384878 0.0833975 0.620862 -0.827954
+0.591421 0.69442 -0.811967 -0.3639;
+#X coords 0 1 100 -1 200 140 1 0 0;
+#X restore 441 558 graph;
+#X obj 252 645 tgl 15 0 empty empty empty 17 7 0 10 -204786 -1 -1 0
+1;
+#X obj 252 676 metro 100;
+#X obj 252 709 tabwrite~ signal;
+#X obj 198 447 *;
+#X obj 187 620 *~;
+#X obj 218 474 osc~ 20;
+#X obj 218 500 +~ 1;
+#X obj 218 533 *~ 0.5;
+#X floatatom 129 410 5 0 0 0 - - -;
+#X obj 217 419 bang;
+#X text 226 343 value;
+#X obj 190 374 clip 0 1;
+#X obj 308 445 bonk~;
+#X obj 308 419 sig~;
+#X obj 307 479 spigot;
+#X obj 393 419 tgl 15 0 empty empty empty 0 -6 0 8 -204786 -1 -1 0
+1;
+#X text 420 418 attempt an onset detection;
+#X obj 363 504 print bonk;
+#X text 278 644 display signal;
+#X msg 129 370 20;
+#X obj 40 174 loadbang;
+#X floatatom 342 560 5 0 0 0 - - -;
+#X obj 308 528 unpack f f f;
+#X text 180 17 pd-0.49-1 with oscx external - to install 1 pd -> Help
+-> Find externals -> Preferences -> check "Should newly installed libraries
+be added to Pd's search path?" 2 pd -> Help -> Find externals -> search
+for "oscx" -> confirm 3 restart pd 4 switch the dsp on;
+#X obj 190 174 dumpOSC 9299;
+#X obj 308 573 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 114 534 noise~ 440;
+#X text 268 375 add a tremolo to the noise generator \, quite noisy
+;
+#X obj 190 212 spigot;
+#X obj 292 174 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X connect 0 0 6 0;
+#X connect 1 0 0 0;
+#X connect 2 0 0 0;
+#X connect 3 0 0 0;
+#X connect 5 0 0 0;
+#X connect 7 0 0 0;
+#X connect 9 0 4 0;
+#X connect 10 0 29 0;
+#X connect 11 0 10 0;
+#X connect 12 0 13 0;
+#X connect 13 0 11 0;
+#X connect 18 0 19 0;
+#X connect 19 0 20 0;
+#X connect 21 0 23 0;
+#X connect 22 0 20 0;
+#X connect 22 0 16 0;
+#X connect 22 0 16 1;
+#X connect 23 0 24 0;
+#X connect 24 0 25 0;
+#X connect 25 0 22 1;
+#X connect 26 0 21 0;
+#X connect 27 0 21 0;
+#X connect 29 0 27 0;
+#X connect 29 0 21 1;
+#X connect 29 0 31 0;
+#X connect 30 1 32 0;
+#X connect 31 0 30 0;
+#X connect 32 0 35 0;
+#X connect 32 0 40 0;
+#X connect 33 0 32 1;
+#X connect 37 0 26 0;
+#X connect 38 0 37 0;
+#X connect 40 1 39 0;
+#X connect 40 1 43 0;
+#X connect 42 0 46 0;
+#X connect 44 0 22 0;
+#X connect 46 0 12 0;
+#X connect 47 0 46 1;

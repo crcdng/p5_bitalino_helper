@@ -5,7 +5,7 @@
 
 Bitalino bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
-int data[] = new int[6]; // data of the 6 acquisition channels
+int data [] = new int[6]; // data of the 6 acquisition channels
 
 void setup() {
   bitalino = new Bitalino2(this, PORT);

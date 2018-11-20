@@ -46,6 +46,7 @@ boolean connected = false;
 Bitalino bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
+float sendValues[] = new float[2]; 
 
 void setup() {
   oscP5 = new OscP5(this, MY_UDP_PORT);
@@ -60,8 +61,10 @@ void draw() {
   data = bitalino.receive(); // read a sample of raw data
   int eda = data[EDA];
   int eeg = data[EEG];
+  sendValues[0] = norm(eda, 0, 1024);
+  sendValues[1] = norm(eeg, 0, 1024); 
   // send normalized EDA, EEG values to A-Frame
-  sendOsc(new float [] { norm(eda, 0, 1024), norm(eeg, 0, 1024) }, destination);  
+  sendOsc(sendValues, destination);  
   // visualize the values
   float yEda = map(eda, 0, 1024, 0, height);
   fill(12, 18, 244);
@@ -73,8 +76,7 @@ void draw() {
 
 void sendOsc(float [] values, NetAddress dest) { 
   OscMessage msg = new OscMessage("/aframe/inputs");
-  msg.add(values[0]);  
-  msg.add(values[1]);
+  for (float value : values) { msg.add(value); }
   oscP5.send(msg, dest);
 }
 

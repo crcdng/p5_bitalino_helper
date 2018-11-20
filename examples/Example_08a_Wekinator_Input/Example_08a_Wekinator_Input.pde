@@ -21,15 +21,16 @@ final int EDA = 2;  // Electrodermal activity signal (skin, channel 3)
 final int EEG = 3;  // Electroencephalogram signal (brainz, channel 4)
 
 OscP5 oscP5;
-NetAddress dest;
+NetAddress destination;
 
 Bitalino bitalino;
 final int PORT = 0; // the index of the BITalino port displayed in the console
 int data[] = new int[6]; // data of the 6 acquisition channels
+float sendValues[] = new float[2]; 
 
 void setup() {
   oscP5 = new OscP5(this, 11999);
-  dest = new NetAddress("127.0.0.1", 6448);
+  destination = new NetAddress("127.0.0.1", 6448);
   bitalino = new Bitalino2(this, PORT);
   bitalino.start(100); // data acquisition with 100 samples / second
   // bitalino.start(100, new int [] { 0, 1, 2, 3, 4, 5 }, 0x2); // emulation
@@ -41,7 +42,9 @@ void draw() {
   int eda = data[EDA];
   int eeg = data[EEG];
   // send raw EDA, EEG values to Wekinator
-  sendOsc(new float [] { eda, eeg }); 
+  sendValues[0] = eda;
+  sendValues[1] = eeg;
+  sendOsc(sendValues, destination); 
   // visualize the values
   float yEda = map(eda, 0, 1024, 0, height);
   fill(12, 18, 244);
@@ -51,9 +54,8 @@ void draw() {
   rect(60, height - yEeg, 30, yEeg); 
 }
 
-void sendOsc(float [] values) { 
+void sendOsc(float [] values, NetAddress dest) { 
   OscMessage msg = new OscMessage("/wek/inputs");
-  msg.add(values[0]); 
-  msg.add(values[1]);
+  for (float value : values) { msg.add(value); }
   oscP5.send(msg, dest);
 }

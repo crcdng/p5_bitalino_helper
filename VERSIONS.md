@@ -17,7 +17,8 @@
 ## 0.3.0 "Examples, Please" (In Progress)
 [x] Example: Machine Learning with Wekinator    
 [x] Example: Sonify Biosignals with Supercollider        
-[x] Example: Biodata and VR with AFRAME        
+[x] Example: Biodata and VR with AFRAME     
+[x] Example: Heartbeat to Pure Data (pd)           
 [ ] Example: Actuation with Arduino        
 
 ## 0.2.0 "More BITs" (Current)
