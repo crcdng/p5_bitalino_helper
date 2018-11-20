@@ -12,18 +12,18 @@
 [ ] Documentation: Examples<br>
 
 ## 0.4.0 "Show me the Data" (Planned)
-[ ] Example: Raw Data to Units<br>
+[x] Example: Convering Raw Data to Units<br>
 [ ] Example: Filtering and Smoothing<br>
 [ ] Example: Onset Detection for Heartbeat<br>
 
-## 0.3.0 "Examples, Please" (In Progress)
+## 0.3.0 "Examples, Please" (Current)
 [x] Example: Machine Learning with Wekinator<br>
 [x] Example: Sonify Biosignals with Supercollider<br>
 [x] Example: Biodata and VR with AFRAME<br>
 [x] Example: Heartbeat to Pure Data (pd)<br>
-[ ] Example: Actuation with Arduino<br>
+[x] Example: Actuation with Arduino<br>
 
-## 0.2.0 "More BITs" (Current)
+## 0.2.0 "More BITs" (Done)
 [x] API: trigger, version<br>
 [x] API: Bitalino2 subclass for BITalino (r)evolution<br>
 [x] Example: Trigger<br>
@@ -31,7 +31,7 @@
 [x] Example: GraphWriter (adapted from code by Edwin Dertien)<br>
 [x] Example: MusclePong (adapted from code by Edwin Dertien)<br>
 
-## 0.1.0 "Hello BITalino" (Previous)
+## 0.1.0 "Hello BITalino" (Done)
 [x] API: Basic functionality to acquire and record data<br>
 [x] Example: Hello BITalino<br>
 [x] Example: Muscle<br>
