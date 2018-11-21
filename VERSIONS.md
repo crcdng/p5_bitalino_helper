@@ -12,7 +12,7 @@
 [ ] Documentation: Examples<br>
 
 ## 0.4.0 "Show me the Data" (Planned)
-[x] Example: Convering Raw Data to Units<br>
+[x] Example: Convert Raw Data to Units<br>
 [ ] Example: Filtering and Smoothing<br>
 [ ] Example: Onset Detection for Heartbeat<br>
 
