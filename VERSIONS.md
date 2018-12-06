@@ -16,10 +16,13 @@
 [ ] Example: Filtering and Smoothing<br>
 [ ] Example: Onset Detection for Heartbeat<br>
 
-## 0.3.0 "Examples, Please" (Current)
+## 0.3.1 "Security" (Current)
+[-] pulling Example 10 (A-Frame) to investigate a security issue in the dependencies
+
+## 0.3.0 "Examples, Please" (Done)
 [x] Example: Machine Learning with Wekinator<br>
 [x] Example: Sonify Biosignals with Supercollider<br>
-[x] Example: Biodata and VR with AFRAME<br>
+[x] Example: Biodata and VR with A-Frame<br>
 [x] Example: Heartbeat to Pure Data (pd)<br>
 [x] Example: Actuation with Arduino<br>
 
