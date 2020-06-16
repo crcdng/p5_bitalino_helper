@@ -27,3 +27,7 @@ void draw() {
 Sometimes, you get an error message like this one: `Bitalino: Could not open a connection to the BITalino at port: ...`. First wait a second and restart the sketch. If the message persists, double check the port and the Bluetooth connection to your BITalino.
 
 See [VERSIONS.md](VERSIONS.md) for more info about the roadmap and planned features.
+
+#### Update (2020) 
+Processing is broken on Mac computers with Mac OSX 10.5 Catalina. For a workaround and to run this sketch with Processing 3.5.4 see:
+https://gist.github.com/i3games/b063987dfb62baf5d0afda422631b480
