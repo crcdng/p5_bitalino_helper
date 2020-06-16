@@ -1,4 +1,4 @@
-# P5 BITalino-helper
+# p5: BITalino Helper
 
 A helper class for using [Processing](https://processing.org) with [BITalino](http://bitalino.com/en/).
 
